@@ -24,7 +24,13 @@ def find_shortest_path(edges: list, source: str, target: str) -> list:
 
 def count_connected_components(edges: list) -> int:
     """Sub-task 3: Count the number of connected components in an undirected graph."""
-    pass
+    if not edges:
+        return 0
+
+    G = nx.Graph()
+    G.add_edges_from(edges)
+
+    return nx.number_connected_components(G)
 
 def compute_topological_sort(directed_edges: list) -> list:
     """Sub-task 4: Compute a topological ordering of nodes in a DAG."""
